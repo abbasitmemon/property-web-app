@@ -74,11 +74,64 @@ A modern React application for managing and booking properties. This app allows 
 
 ---
 
-## ⚡ Installation
+## ⚡ Setup
 
 1. Clone the repository:
 
 ```bash
-git clone <your-repo-url>
-cd <project-folder>
+git clone https://github.com/abbasitmemon/property-web-app.git
+cd property-web-app
 ```
+
+2. Copy `.env.example` to `.env` and update environment variables:
+
+```bash
+cp .env.example .env
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Start the development server:
+
+```bash
+npm start
+```
+
+Open in browser: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🧭 Routes
+
+### Guest Routes
+
+- `/` → Property listings (`Properties`)
+- `/property/:id` → Property details (`PropertyDetails`)
+- `/book/:id` → Booking page (`Booking`)
+
+### Admin Routes
+
+- `/admin/login` → Admin login
+- `/admin/dashboard` → Admin dashboard
+- `/admin/properties/new` → Create new property
+- `/admin/properties/edit/:id` → Edit property
+- `/admin/properties/view/:id` → View property
+- `/admin/properties/:id/availability` → Manage availability
+- `/admin/properties/:id/availability/edit` → Edit availability
+- `/admin/bookings` → View all bookings
+- `/admin/bookings/view/:id` → View booking details
+
+---
+
+## 💡 Notes
+
+- All API requests are handled via Axios in `src/api/axios.js`.
+- Redux is used for authentication and global state management.
+- Admin and guest routes are protected using middleware.
+- Tailwind CSS is used for styling.
+
+---
